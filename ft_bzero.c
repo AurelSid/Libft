@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 14:07:09 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 20:12:25 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/09 16:57:48 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/09 17:33:34 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int nb)
+#include <stdlib.h>
+
+void	ft_bzero(void *s, size_t n)
 {
-	if (nb >= '1' && nb <= '9')
-		return (1);
-	else
-		return (0);
+	long unsigned int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		*((unsigned char *)s + i) = 0;
+		i++;
+	}
 }
-/*
-#include <stdio.h>
-int main(int argc,char **argv)
+/*#include<stdio.h>
+#include<strings.h>
+int main()
 {
-        printf("argc : %d result;%d",argc,(ft_isdigit(argv[1][0])));
+    char s[] = "hello";
+    char s1[] = "hello";
+    printf("sttring:%s \n",s);
+    ft_bzero(s,3);
+    printf("ma fonction :%s \n",s);
+    bzero(s1,3);
+    printf("fontion officiel : %s \n",s1);
 }*/

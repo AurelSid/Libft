@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 14:07:09 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 20:12:25 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/09 20:44:37 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/09 21:15:59 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int nb)
+#include <stdlib.h>
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	if (nb >= '1' && nb <= '9')
-		return (1);
-	else
-		return (0);
+	size_t  i;
+
+	i = 0;
+	while(i < n)
+	{
+		if(*((unsigned char *)s + i) == c)
+		{
+			return((void *)s + i);
+		}	
+		i++;
+	}
+	return(0);
 }
-/*
-#include <stdio.h>
-int main(int argc,char **argv)
+/*#include <stdio.h>
+#include <string.h>
+int main()
 {
-        printf("argc : %d result;%d",argc,(ft_isdigit(argv[1][0])));
+	const char s[] = "hello";
+	int c = 'l';
+	printf("%s \n",ft_memchr(s,c,6));
+	printf("%s \n",memchr(s,c,6));
+	return(0);
 }*/

@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 14:07:09 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 20:12:25 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/09 13:43:43 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/09 17:03:09 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int nb)
+#include <stdlib.h>
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (nb >= '1' && nb <= '9')
-		return (1);
-	else
-		return (0);
+	long unsigned int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		*((unsigned char *)dest + i) = *((unsigned char *)src + i);
+		i++;
+	}
+	return (dest);
 }
-/*
-#include <stdio.h>
-int main(int argc,char **argv)
+/*#include <stdio.h>
+int main()
 {
-        printf("argc : %d result;%d",argc,(ft_isdigit(argv[1][0])));
+	char src[] = "bbbbb";
+	char dest[] = "AAAA";
+	printf("%s \n",dest);
+	ft_memcpy(dest,src,2);
+	printf("%s \n",dest);
+
 }*/

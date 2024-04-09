@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Asideris <Asideris@42.fr>                  +#+  +:+       +#+        */
+/*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 18:10:54 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/06 18:31:55 by Asideris         ###   ########.fr       */
+/*   Updated: 2024/04/09 20:11:53 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_strlen(char *str)
 {
 	int	i;

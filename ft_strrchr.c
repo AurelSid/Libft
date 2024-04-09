@@ -1,25 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 14:07:09 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 20:12:25 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/09 17:35:10 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/09 20:56:58 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int nb)
+int	ft_strlen(const char *str)
 {
-	if (nb >= '1' && nb <= '9')
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
-/*
-#include <stdio.h>
-int main(int argc,char **argv)
+char	*ft_strrchr(const char *s, int c)
 {
-        printf("argc : %d result;%d",argc,(ft_isdigit(argv[1][0])));
+	int	i;
+	
+	i = ft_strlen(s);
+	while (i > 0)
+	{
+		if (s[i] == c)
+		{
+			return ((char *)&s[i]);
+		}
+		i--;
+	}
+	return (0);
+}
+/*#include<stdio.h>
+int main()
+{
+	const char s[] = "ZZZaCCCCaBBaB";
+	int c = 'a';
+	printf("%s",ft_strrchr(s,c));
+	return(0);
 }*/

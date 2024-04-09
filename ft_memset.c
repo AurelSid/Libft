@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Asideris <Asideris@42.fr>                  +#+  +:+       +#+        */
+/*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 18:52:17 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/06 21:25:09 by Asideris         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:04:55 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+
+#include <stdlib.h>
 
 void	*ft_memset(void *dest, int c, size_t size)
 {
