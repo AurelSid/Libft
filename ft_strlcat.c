@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:34:00 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 18:53:22 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:54:57 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 int main()
 {
 	char src[] = "Hello";
-	char dest[12];
-	char dest2[12];
-	
-	printf("%zu\n",ft_strlcat(dest, src, 3));
+	char dest[10] = "sir";
+	char dest2[10] = "sir";
+	printf("%zu\n",ft_strlcat(dest, src, 10));
 	printf("%s\n",dest);
-	printf("%zu\n",strlcat(dest2, src, 3));
+	printf("%zu\n",strlcat(dest2, src, 10));
 	printf("%s\n",dest2);
 }*/

@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 13:43:43 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/10 13:01:18 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/10 11:59:28 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/10 13:01:04 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	long unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		*((unsigned char *)dest + i) = *((unsigned char *)src + i);
+		if (*((unsigned char *)s1 + i) != *((unsigned char *)s2 + i))
+		{
+			return (*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i));
+		}
 		i++;
 	}
-	return (dest);
+	return (0);
 }
-/*#include <stdio.h>ß
+/*#include<stdio.h>
+#include<string.h>
 int main()
 {
-	char src[] = "bbbbb";
-	char dest[] = "AAAA";
-	printf("%s \n",dest);
-	ft_memcpy(dest,src,2);
-	printf("%s \n",dest);
+	char s1[] = "hellothere";
+	char s2[] = "helloBoy";
 
+	printf("ft_memecmp: %d\n",(ft_memcmp(s1, s2, 7)));
+	printf("lib memcmp: %d\n",(memcmp(s1, s2, 7)));
 }*/

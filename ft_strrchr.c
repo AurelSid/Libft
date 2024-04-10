@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 17:35:10 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 20:56:58 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/10 13:02:09 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ int	ft_strlen(const char *str)
 	}
 	return (i);
 }
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
-	
+
 	i = ft_strlen(s);
 	while (i > 0)
 	{

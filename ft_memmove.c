@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:58:51 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 16:20:09 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/10 13:38:25 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int main()
 	
 	char dest[] = "AAACDBB";
 	char dest2[] = "AAACDBB";
-	ft_memmove(dest + 3,dest + 4,2);
+	ft_memmove(dest + 3,dest + 4, 2);
 	printf("%s \n",dest);
-	memmove(dest2 + 3,dest2 + 4,2);
+	memmove(dest2 + 4,dest2 + 3, 2);
 	printf("%s \n",dest);
 
 }*/

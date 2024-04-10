@@ -1,39 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 20:44:37 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/10 12:58:36 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/10 17:19:30 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/10 18:25:51 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_isdigit(int nb)
+{
+	if (nb >= '1' && nb <= '9')
+		return (1);
+	else
+		return (0);
+}
+
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		if (*((unsigned char *)s + i) == c)
-		{
-			return ((void *)s + i);
-		}
 		i++;
 	}
-	return (0);
+	return (i);
+}
+
+int	ft_atoi(const char *str)
+{
+	size_t	i;
+	size_t	len;
+	int		result;
+
+	i = 0;
+	result = 0;
+	len = ft_strlen(str);
+	if (ft_isdigit(str[0]))
+	{
+		while (ft_isdigit(str[i]))
+		{
+			result = (result * 10) + (str[i] - '0');
+			i++;
+		}
+	}
+	return (result);
 }
 /*#include <stdio.h>
 #include <string.h>
 int main()
 {
-	const char s[] = "hello";
-	int c = 'l';
-	printf("%s \n",ft_memchr(s,c,6));
-	printf("%s \n",memchr(s,c,6));
-	return(0);
+	const char str[] = "3323Hello";
+	printf("%d \n",ft_atoi(str));
+	printf("%d \n",atoi(str));
 }*/
+
