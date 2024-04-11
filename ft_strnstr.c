@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:56:02 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/10 16:32:30 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:51:40 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	size = (size_t)ft_strlen((char *)needle);
 	i = 0;
-	if (needle == NULL)
-		return ((char *)haystack);
 	while (i < len)
 	{
 		j = 0;
@@ -50,14 +48,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		i++;
 	}
-	return (0);
+	return ((char *)haystack);
 }
 
 /*#include<stdio.h>
 #include<string.h>
 int main()
 {
-    const char needle[] = "hello";
+    const char *needle;
     const char haystack[] = "ohellkkkhellothere";
 
     
