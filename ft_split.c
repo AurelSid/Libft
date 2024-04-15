@@ -3,52 +3,86 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 22:24:26 by marvin            #+#    #+#             */
-/*   Updated: 2024/04/13 22:25:53 by marvin           ###   ########.fr       */
+/*   Updated: 2024/04/15 17:22:01 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-void ft_populate(char **array, char const *s, char c)
+
+static void ft_free(int i, char **array)
+{
+		while(i > 0)
+		{
+			free(array[i]);
+			i--;
+		}
+		free(array);
+}
+	
+
+static int ft_tokencount(char const *s, char c)
+{
+	int 	count;
+	int		i;
+
+	count = 0;
+	i = 0;
+	while(s[i])
+	{
+		if(s[i] && s[i] != c)
+		{
+			count++;
+			while(s[i] && s[i] != c)
+				i++;
+		}
+		else if(s[i] && s[i] == c)
+			i++;
+	}
+	return (count);
+}
+static int ft_wordlen(const char *s, char c)
 {
 	int i;
-	int prev;
-	char *nextword;
-	int j;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+	{
+		i++;
+	}
+	return (i);
+}
+
+char **split(char const *s, char c, char **array, int wordcount)
+{
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	prev = 0;
-	while (s[i])
+	while (i < wordcount)
 	{
-		if (ft_isalnum(s[i]) && s[i - 1] == c)
+		while (s[j] && s[j] == c)
 		{
-			nextword = ft_substr(s, prev, (i - 1) - prev);
-			array[j] = malloc(sizeof(char) * ft_strlen(nextword));
-			ft_memcpy(array[j], nextword, ft_strlen(nextword));
-			prev = i;
+			j++;
+		}
+		array[i] = ft_substr(s, j, ft_wordlen(&s[j], c));
+		if (!array[i])
+		{
+			ft_free(i, array);
+			return (NULL);
+		}
+		while (s[j] && s[j] != c)
+		{
 			j++;
 		}
 		i++;
 	}
-}
-int ft_tokencount(char const *s, char c)
-{
-	int i;
-	int count;
-
-	i = 0;
-	count = 1;
-	while (s[i])
-	{
-		if (ft_isalnum(s[i]) && s[i - 1] == c)
-			count++;
-		i++;
-	}
-	return (count);
+	array[i] = NULL;
+	return(array);
 }
 
 char **ft_split(char const *s, char c)
@@ -57,24 +91,23 @@ char **ft_split(char const *s, char c)
 	int wordcount;
 
 	wordcount = ft_tokencount(s, c);
-	if (s == NULL)
-		return (0);
-	array = malloc(sizeof(char *) * wordcount);
-	ft_populate(array, s, c);
-	return (array);
+	array = malloc(sizeof(char *) * (wordcount + 1));
+	if(!array)
+		return (NULL);
+	array = split(s, c, array, wordcount);
+	return(array);
 }
-
 /*int	main(void)
 {
 	char	c;
 	char	*str;
-	int i;
+	int		i;
 	char **array;
 
 	i = 0;
 	c = ' ';
-	str = "hello  there sir   how";
-	array = ft_strsplit(str, c);
+	str = "   h   ello    ";
+	array = ft_split(str, c);
 
 	while(array[i])
 	{

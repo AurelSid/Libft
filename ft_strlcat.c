@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:34:00 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/14 17:12:56 by marvin           ###   ########.fr       */
+/*   Updated: 2024/04/15 17:39:37 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 #include <stdio.h>
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	size_dst;
 	size_t	size_src;
@@ -22,17 +22,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_dst = ft_strlen((char *)dst);
 	i = size_dst;
 	size_src = ft_strlen((char *)src);
-	if (size <= size_dst)
-		return (size + size_src);
-	size = size - (size_dst + 1);
-	while (i != (size_dst + size))
+	if (dstsize <= size_dst)
+		return (dstsize + size_src);
+	dstsize = dstsize - (size_dst + 1);
+	while (i != (size_dst + dstsize))
 		dst[i++] = *src++;
 	dst[i] = '\0';
-	printf("%s",dst ); 
 	return (size_dst + size_src);
 }
 
-#include <string.h>
+/*#include <string.h>
 int main()
 {
 	const char src[] = "Hello";
@@ -42,6 +41,6 @@ int main()
 	printf("%s\n",dest);
 	printf("%zu\n",(size_t)strlcat(dest2, src, 10));
 	printf("%s\n",dest2);
-	ft_strlcat("pqrstuvwxyz", "abcd", 20);
+
 	
-}
+}*/

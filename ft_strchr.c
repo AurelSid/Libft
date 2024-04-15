@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 15:03:33 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 20:12:56 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:48:22 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
+	int	n;
 
 	i = 0;
-	if(c == '\0')
-		return((char *)&s[ft_strlen(s) + 1]);
-	while (s[i])
+	n = ft_strlen(s);
+	while ( i <= n)
 	{
 		if (s[i] == c)
 		{

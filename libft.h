@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:43:04 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/14 17:09:23 by marvin           ###   ########.fr       */
+/*   Updated: 2024/04/15 20:30:53 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
+int ft_isdigit(int nb);
 char **ft_split(char const *s, char c);
 int ft_atoi(const char *str);
 void ft_bzero(void *s, size_t n);
@@ -23,7 +24,6 @@ void *ft_calloc(size_t count, size_t size);
 int ft_isalnum(char c);
 int ft_isalpha(char c);
 int ft_isascii(int c);
-int ft_isdigit(int nb);
 int ft_isprint(char c);
 void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -44,5 +44,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len);
 int ft_tolower(int c);
 int ft_toupper(int c);
 void *ft_memmove(void *dest, const void *src, size_t len);
+char *ft_itoa(int n);
 
 #endif
