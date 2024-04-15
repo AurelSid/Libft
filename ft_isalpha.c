@@ -17,9 +17,8 @@ int	ft_isalpha(char c)
 	else
 		return (0);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 int main(int argc,char **argv)
 {
-	printf("%d",(ft_isalpha(argv[1][0])));
+	printf("agrrc : %d result: %d",argc,ft_isalpha(argv[1][0]));
 }*/

@@ -10,21 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int nb)
-{
-	if (nb >= '1' && nb <= '9')
-		return (1);
-	else
-		return (0);
-}
-
-int	ft_isalpha(char c)
-{
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
-}
+#include "libft.h"
 
 int	ft_isalnum(char c)
 {
@@ -33,7 +19,7 @@ int	ft_isalnum(char c)
 	else
 		return (0);
 }
-/*
+/*#include<stdio.h>
 int main(int argc, char **argv)
 {
 	printf("argc:%d result:%d \n",argc,ft_isalnum(argv[1][0]));

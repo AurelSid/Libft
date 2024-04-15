@@ -11,18 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-void	ft_bzero(void *s, size_t n)
-{
-	long unsigned int	i;
-
-	i = 0;
-	while (i < n)
-	{
-		*((unsigned char *)s + i) = 0;
-		i++;
-	}
-}
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

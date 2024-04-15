@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int nb)
+int ft_isdigit(int nb)
 {
-	if (nb >= '1' && nb <= '9')
+	if (nb >= '0' && nb <= '9')
 		return (1);
 	else
 		return (0);
 }
-/*
-#include <stdio.h>
+
+/*#include <stdio.h>
 int main(int argc,char **argv)
 {
-        printf("argc : %d result;%d",argc,(ft_isdigit(argv[1][0])));
+		printf("argc : %d result;%d",argc,(ft_isdigit(argv[1][0])));
 }*/

@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	long unsigned int	i;
+	long unsigned int i;
 
 	i = 0;
 	while (i < n)
@@ -24,13 +25,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*#include <stdio.h>ß
+/*#include <stdio.h>
 int main()
 {
 	char src[] = "bbbbb";
 	char dest[] = "AAAA";
-	printf("%s \n",dest);
-	ft_memcpy(dest,src,2);
-	printf("%s \n",dest);
-
+	printf("%s \n", dest);
+	ft_memcpy(dest, src, 2);
+	printf("%s \n", dest);
 }*/

@@ -31,13 +31,9 @@ static int	ft_isset(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
 	int		start;
 	int		end;
 
-	i = 0;
-	j = 0;
 	start = 0;
 	end = ft_strlen((char *)s1);
 
@@ -55,8 +51,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 
 }
-#include<stdio.h>
+/*#include<stdio.h>
 int	main(void)
 {
 	printf("%s\n", ft_strtrim("baHELLOab", "ab"));
 }
+*/

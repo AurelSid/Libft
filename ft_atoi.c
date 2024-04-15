@@ -11,36 +11,14 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-int	ft_isdigit(int nb)
-{
-	if (nb >= '1' && nb <= '9')
-		return (1);
-	else
-		return (0);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
+#include "libft.h"
 int	ft_atoi(const char *str)
 {
 	size_t	i;
-	size_t	len;
 	int		result;
 
 	i = 0;
 	result = 0;
-	len = ft_strlen(str);
 	if (ft_isdigit(str[0]))
 	{
 		while (ft_isdigit(str[i]))

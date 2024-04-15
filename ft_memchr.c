@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:44:37 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/10 12:58:36 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/14 16:59:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (i < n)
@@ -25,15 +26,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
-/*#include <stdio.h>
-#include <string.h>
-int main()
+
+/*int main()
 {
-	const char s[] = "hello";
-	int c = 'l';
-	printf("%s \n",ft_memchr(s,c,6));
-	printf("%s \n",memchr(s,c,6));
-	return(0);
+	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
+	int *result = (int *)ft_memchr(tab, -1, 7);
+	if (result != NULL)
+		printf("%d\n", *result);
+	return (0);
 }*/

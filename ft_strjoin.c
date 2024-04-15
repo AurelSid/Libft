@@ -11,24 +11,13 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s;
-	int		sizes1;
-	int		sizes2;
+	size_t		sizes1;
+	size_t		sizes2;
 	int		i;
 	int		j;
 

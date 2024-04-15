@@ -11,46 +11,38 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void *ft_memmove(void *dest, const void *src, size_t len)
 {
-	long unsigned int	i;
+	unsigned char *d = (unsigned char *)dest;
+	const unsigned char *s = (const unsigned char *)src;
 
-	i = 0;
-	while (i < n)
-	{
-		*((unsigned char *)dest + i) = *((unsigned char *)src + i);
-		i++;
-	}
-	return (dest);
-}
+	if (dest == src)
+		return (dest);
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
-{
 	if (dest > src)
 	{
-		while (len > 0)
-		{
-			*((unsigned char *)dest + len) = *((unsigned char *)src + len);
-			len--;
-		}
+		while (len--)
+			d[len] = s[len];
 	}
 	else
 	{
-		ft_memcpy(dest, src, len);
+		while (len--)
+			*d++ = *s++;
 	}
+
 	return (dest);
 }
 /*#include <stdio.h>
 #include <string.h>
 int main()
 {
-	
-	char dest[] = "AAACDBB";
-	char dest2[] = "AAACDBB";
-	ft_memmove(dest + 3,dest + 4, 2);
-	printf("%s \n",dest);
-	memmove(dest2 + 4,dest2 + 3, 2);
-	printf("%s \n",dest);
 
+	char dest[] = "conseipsum dolor sit a";
+	char dest2[] = "conseipsum dolor sit a";
+	ft_memmove(dest + 3, dest + 4, 2);
+	printf("%s \n", dest);
+	memmove(dest2 + 4, dest2 + 3, 2);
+	printf("%s \n", dest);
 }*/
