@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:40:33 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/15 20:32:52 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/16 17:46:26 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char *ft_itoa(int n)
     if(nb < 0)
     {
         str = malloc(sizeof(char) * (i + 3));
+        if(!str)
+          return(0);
         str[0] = '-';
         nb = nb * -1;
         i++;
@@ -41,6 +43,8 @@ char *ft_itoa(int n)
     else
     {
         str = malloc(sizeof(char) * (i + 2));
+         if(!str)
+          return(0);
     }
     str[i+1] = '\0';
     if(n < 0 )
