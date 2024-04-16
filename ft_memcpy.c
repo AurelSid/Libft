@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:43:43 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/10 13:01:18 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:25:23 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
+	if(!dest && !src )
+		return(NULL);
 	long unsigned int i;
 
 	i = 0;

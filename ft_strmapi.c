@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 20:44:37 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/16 14:15:22 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/16 12:21:58 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/16 12:44:24 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+#include "stdlib.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t i;
+	char			*str;
+	unsigned int	i;
 
 	i = 0;
-	while (i < n)
+	if (!s || !f)
+		return (NULL);
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
+	while (s[i])
 	{
-		if (*((char *)s + i) == c)
-		{
-			return ((void *)s + i);
-		}
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
-	
-	return (NULL);
+	str[i] = '\0';
+	return (str);
 }
-
-/*int main()
-{
-	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-	int *result = (int *)ft_memchr(tab, -1, 7);
-	if (result != NULL)
-		printf("%d\n", *result);
-	return (0);
-}*/

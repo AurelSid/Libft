@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 20:44:37 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/16 14:15:22 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/16 13:43:57 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/16 14:00:06 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-void *ft_memchr(const void *s, int c, size_t n)
+#include "libft.h"
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (*((char *)s + i) == c)
-		{
-			return ((void *)s + i);
-		}
+	char	*s;
+	int		i;
+	s = ft_itoa(n);
+	i = 0;;
+	
+	while (s[i])
+	{	
+		write(fd,&s[i],1);
 		i++;
 	}
-	
-	return (NULL);
 }
-
-/*int main()
-{
-	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-	int *result = (int *)ft_memchr(tab, -1, 7);
-	if (result != NULL)
-		printf("%d\n", *result);
-	return (0);
-}*/

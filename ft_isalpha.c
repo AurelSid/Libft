@@ -6,11 +6,11 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 13:42:25 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 20:12:31 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:39:45 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

@@ -5,6 +5,7 @@
     "stddef.h": "c",
     "libft.h": "c",
     "__tuple": "c",
-    "array": "c"
+    "array": "c",
+    "sstream": "c"
   }
 }
