@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 13:43:43 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/17 14:32:52 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/19 13:06:20 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/19 13:55:49 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	long unsigned int	i;
+	t_list	*newList;
+	t_list	*newcurr;
+	void	*content;
 
-	if (!dest && !src)
+	if (!f || !lst || !del)
 		return (NULL);
-	i = 0;
-	while (i < n)
+	newList = NULL;
+	while (lst)
 	{
-		*((unsigned char *)dest + i) = *((unsigned char *)src + i);
-		i++;
+		content = f(lst->content);
+		newcurr = ft_lstnew(content);
+		 if (!newcurr)
+		{
+			del(content);
+			ft_lstclear(&newcurr, (*del));
+			return (newList);
+		}
+		ft_lstadd_back(&newList, newcurr);
+		lst = lst->next;
 	}
-	return (dest);
+	return (newList);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	char src[] = "bbbbb";
-	char dest[] = "AAAA";
-	printf("%s \n", dest);
-	ft_memcpy(dest, src, 2);
-	printf("%s \n", dest);
-}*/

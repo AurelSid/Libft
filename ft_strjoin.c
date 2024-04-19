@@ -6,18 +6,18 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:43:33 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/11 17:03:06 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:33:13 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s;
-	size_t		sizes1;
-	size_t		sizes2;
+	size_t	sizes1;
+	size_t	sizes2;
 	int		i;
 	int		j;
 
@@ -43,11 +43,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 
 /*#include<stdio.h>
-int	main()
+int	main(void)
 {
 	char	*s1;
 	char	*s2;
-	
+
 	s1 = "Hello";
 	s2 = "Theresir";
 	printf("%s",ft_strjoin(s1,s2));

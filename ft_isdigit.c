@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 14:07:09 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/16 15:54:57 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/17 14:41:43 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/17 14:41:55 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int nb)
+int	ft_isdigit(int nb)
 {
 	if (nb >= '0' && nb <= '9')
 		return (1);
@@ -19,7 +19,7 @@ int ft_isdigit(int nb)
 }
 
 /*#include <stdio.h>
-int main(int argc,char **argv)
+int	main(int argc,char **argv)
 {
 		printf("argc : %d result;%d",argc,(ft_isdigit(argv[1][0])));
 }*/

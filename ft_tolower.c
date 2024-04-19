@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 21:26:37 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/09 20:00:06 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:33:21 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	ft_tolower(int c)
 }
 /*
 #include <stdio.h>
-int main()
+
+int	main(void)
 {
-        printf("%c",ft_toupper('B'));
+		printf("%c",ft_toupper('B'));
 }*/

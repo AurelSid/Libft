@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 16:57:48 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/17 14:32:40 by asideris         ###   ########.fr       */
+/*   Created: 2024/04/18 14:59:06 by asideris          #+#    #+#             */
+/*   Updated: 2024/04/18 18:31:56 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	long unsigned int	i;
+	t_list	*current;
 
-	i = 0;
-	while (i < n)
+	current = lst;
+	if (!current)
+		return (NULL);
+	while (current->next)
 	{
-		*((unsigned char *)s + i) = 0;
-		i++;
+		current = current->next;
 	}
+	return (current);
 }
-/*#include<stdio.h>
-#include <strings.h>
-
-int	main(void)
-{
-	char s[] = "hello";
-	char s1[] = "hello";
-	printf("sttring:%s \n",s);
-	ft_bzero(s,3);
-	printf("ma fonction :%s \n",s);
-	bzero(s1,3);
-	printf("fontion officiel : %s \n",s1);
-}*/

@@ -6,74 +6,67 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:40:33 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/16 17:46:26 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:51:42 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include <stdio.h>
+#include "libft.h"
+#include <stdlib.h>
 
-char *ft_itoa(int n)
+int	int_length(int n)
 {
-    long      nb;
-    long        decimal;
-    char    *str;
-    long        i;
+	int	length;
 
-    
-    nb = n;
-    i = 0;
-    decimal = n;
-    if(n < 0)
-              decimal = decimal * -1;
-    while(decimal >= 10)
-    {
-            decimal = decimal/10;
-            i++;
-    }
-    if(nb < 0)
-    {
-        str = malloc(sizeof(char) * (i + 3));
-        if(!str)
-          return(0);
-        str[0] = '-';
-        nb = nb * -1;
-        i++;
-    }
-    else
-    {
-        str = malloc(sizeof(char) * (i + 2));
-         if(!str)
-          return(0);
-    }
-    str[i+1] = '\0';
-    if(n < 0 )
-    {
-      while( i > 0)
-      {
-        
-        str[i] = nb%10 + '0';
-        nb = nb / 10;    
-        i--;
-        decimal = decimal / 10;
-      }
-    }
-    else
-    {
-      while( i >= 0)
-      {
-          
-          str[i] = nb%10 + '0';
-          nb = nb / 10;    
-          i--;
-          decimal = decimal / 10;
-      }
-    }
-    return(str);
+	length = 1;
+	if (n < 0)
+	{
+		length++;
+		n = -n;
+	}
+	while (n >= 10)
+	{
+		length++;
+		n = n / 10;
+	}
+	return (length);
+}
+
+char	*int_to_string(int n, int length)
+{
+	char	*str;
+	int		i;
+
+	str = malloc(sizeof(char) * (length + 1));
+	if (!str)
+		return (NULL);
+	i = length - 1;
+	str[length] = '\0';
+	if (n < 0)
+	{
+		str[0] = '-';
+		n = -n;
+	}
+	while (n > 0)
+	{
+		str[i--] = n % 10 + '0';
+		n /= 10;
+	}
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	int	length;
+
+	length = int_length(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	return (int_to_string(n, length));
 }
 
 /*int main()
 {
-    printf("%s",ft_itoa(1123));
-    return(0);
-}*/
+	printf("%s",ft_itoa(1123));
+	return(0);}*/

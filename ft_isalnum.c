@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 14:24:11 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/12 17:07:38 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:32:42 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_isalnum(char c)
 		return (0);
 }
 /*#include<stdio.h>
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	printf("argc:%d result:%d \n",argc,ft_isalnum(argv[1][0]));
 }*/

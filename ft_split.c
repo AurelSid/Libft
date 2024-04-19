@@ -6,47 +6,47 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 22:24:26 by marvin            #+#    #+#             */
-/*   Updated: 2024/04/15 17:22:01 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:56:31 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static void ft_free(int i, char **array)
+static void	ft_free(int i, char **array)
 {
-		while(i > 0)
-		{
-			free(array[i]);
-			i--;
-		}
-		free(array);
+	while (i >= 0)
+	{
+		free(array[i]);
+		i--;
+	}
+	free(array);
 }
-	
 
-static int ft_tokencount(char const *s, char c)
+static int	ft_tokencount(char const *s, char c)
 {
-	int 	count;
-	int		i;
+	int	count;
+	int	i;
 
 	count = 0;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] && s[i] != c)
+		if (s[i] && s[i] != c)
 		{
 			count++;
-			while(s[i] && s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
-		else if(s[i] && s[i] == c)
+		else if (s[i] && s[i] == c)
 			i++;
 	}
 	return (count);
 }
-static int ft_wordlen(const char *s, char c)
+
+static int	ft_wordlen(const char *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -56,7 +56,7 @@ static int ft_wordlen(const char *s, char c)
 	return (i);
 }
 
-char **split(char const *s, char c, char **array, int wordcount)
+char	**split(char const *s, char c, char **array, int wordcount)
 {
 	int	i;
 	int	j;
@@ -82,20 +82,20 @@ char **split(char const *s, char c, char **array, int wordcount)
 		i++;
 	}
 	array[i] = NULL;
-	return(array);
+	return (array);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **array;
-	int wordcount;
+	char	**array;
+	int		wordcount;
 
 	wordcount = ft_tokencount(s, c);
 	array = malloc(sizeof(char *) * (wordcount + 1));
-	if(!array)
+	if (!array)
 		return (NULL);
 	array = split(s, c, array, wordcount);
-	return(array);
+	return (array);
 }
 /*int	main(void)
 {

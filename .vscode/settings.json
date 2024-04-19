@@ -8,4 +8,9 @@
     "array": "c",
     "sstream": "c"
   }
+  {
+    "[c]": {
+      "editor.defaultFormatter": "keyhr.42-c-format"
+    }
+  }
 }

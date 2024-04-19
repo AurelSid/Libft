@@ -6,12 +6,12 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:43:04 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/12 19:17:35 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:57:16 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 static int	ft_isset(char c, char const *set)
 {
@@ -31,12 +31,15 @@ static int	ft_isset(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		start;
-	int		end;
+	int	start;
+	int	end;
 
+	if (s1[0] == '\0')
+	{
+		return (ft_strdup(""));
+	}
 	start = 0;
-	end = ft_strlen((char *)s1);
-
+	end = ft_strlen(s1);
 	while (ft_isset(s1[start], set) == 1)
 	{
 		start++;
@@ -48,12 +51,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (end == start)
 		return (ft_strdup(""));
 	return (ft_substr(s1, start, end - start));
-
-
 }
 /*#include<stdio.h>
 int	main(void)
 {
-	printf("%s\n", ft_strtrim("baHELLOab", "ab"));
-}
-*/
+	printf("%s\n", ft_strtrim("", ""));
+}*/

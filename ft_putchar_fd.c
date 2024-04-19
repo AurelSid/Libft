@@ -6,12 +6,13 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 13:09:52 by asideris          #+#    #+#             */
-/*   Updated: 2024/04/16 13:17:36 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:03:36 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-void ft_putchar_fd(char c, int fd)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);	
+	write(fd, &c, 1);
 }

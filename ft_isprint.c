@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 16:03:12 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/15 22:13:57 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:32:47 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	ft_isprint(int c)
 }
 /*
 #include <stdio.h>
-int main()
+
+int	main(void)
 {
 	printf("%d",ft_isprint('a'));
 	printf("%d",ft_isprint('	'));

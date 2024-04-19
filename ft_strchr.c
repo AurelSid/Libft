@@ -6,12 +6,12 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 15:03:33 by Asideris          #+#    #+#             */
-/*   Updated: 2024/04/15 16:48:22 by asideris         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:40:39 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -20,9 +20,9 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	n = ft_strlen(s);
-	while ( i <= n)
+	while (i <= n)
 	{
-		if (s[i] == c)
+		if (((unsigned char *)s)[i] == (unsigned char)c)
 		{
 			return ((char *)&s[i]);
 		}
@@ -32,7 +32,7 @@ char	*ft_strchr(const char *s, int c)
 }
 
 /*#include<stdio.h>
-int main()
+int	main(void)
 {
 	const char s[] = "hello";
 	int c = 'l';
